@@ -18,7 +18,7 @@ app.post('/react', async (req, res) => {
   const { post_link, reaction_type, fb_cookie } = req.body;
 
   try {
-    const response = await axios.get('https://flikers.onrender.com/api/react', {
+    const response = await axios.get('https://flikers.onrender.com/api/react?cookie=&link=&type=', {
       params: {
         link: post_link,
         type: reaction_type,
@@ -63,3 +63,4 @@ app.get('/link-preview', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+      
